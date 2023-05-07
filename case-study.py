@@ -89,8 +89,12 @@ column = st.selectbox(
     format_func=lambda x: readable_names[survey_type][x]
 )
 category = table[column].dtype == "object"
+
 if category:
-    category_counts = table[column].value_counts().reset_index()
+    col = table[column]
+    if column[-3:] == " by":
+        col = col.str.split(", ").explode()
+    category_counts = col.value_counts().reset_index()
     category_counts.columns = [column, 'Frequency']
     fig = px.bar(category_counts, x=column, y='Frequency', text='Frequency', color = column, text_auto=True)
     fig.update_layout(title=titles[survey_type], xaxis_title=readable_names[survey_type][column], yaxis_title="Frequency")
