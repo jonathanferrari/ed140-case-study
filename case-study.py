@@ -104,8 +104,6 @@ fig.update_traces(textposition='outside')
 
 st.markdown("## Histogram")
 st.plotly_chart(fig)
-st.markdown("## Responses")
-st.dataframe(table)
 st.markdown("## Statistics")
 st.markdown(f"#### Count: {table[column].count()}")
 if not category:
@@ -113,3 +111,6 @@ if not category:
     st.markdown(f"#### Median: {table[column].median()}")
     st.markdown(f"#### Min: {table[column].min()}")
     st.markdown(f"#### Max: {table[column].max()}")
+st.markdown("## Responses")
+st.dataframe(table)
+
