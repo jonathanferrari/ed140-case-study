@@ -71,6 +71,8 @@ def load_sheet():
     return data
 data = load_sheet()
 
+st.title("Case Study Survey Data Analysis")
+
 survey_type = st.selectbox(
     "Select Survey",
     options=list(titles.keys()),
@@ -101,7 +103,6 @@ else:
                         text_auto=True)
     
 fig.update_traces(textposition='outside')
-st.title("Case Study Survey Data Analysis")
 st.markdown("## Histogram")
 st.plotly_chart(fig)
 st.markdown("## Statistics")
