@@ -94,7 +94,6 @@ if category:
     col = table[column]
     if column in ["learn_modes", "demonstrate_modes"]:
         col = col.str.split(", ").explode()
-    st.dataframe(pd.DataFrame(col))
     category_counts = col.value_counts().reset_index()
     category_counts.columns = [column, 'Frequency']
     fig = px.bar(category_counts, x=column, y='Frequency', text='Frequency', color = column, text_auto=True)
