@@ -92,7 +92,7 @@ category = table[column].dtype == "object"
 
 if category:
     col = table[column]
-    if column[-3:] == " by":
+    if column in ["learn_modes", "demonstrate_modes"]:
         col = col.str.split(", ").explode()
     st.dataframe(pd.DataFrame(col))
     category_counts = col.value_counts().reset_index()
