@@ -107,13 +107,16 @@ else:
                         text_auto=True)
     
 fig.update_traces(textposition='outside')
-st.markdown("## Histogram")
-st.plotly_chart(fig)
-st.markdown("## Statistics")
-st.markdown(f"#### Count: {table[column].count()}")
-if not category:
-    st.markdown(f"#### Mean: {round(table[column].mean(), 2)}")
-    st.markdown(f"#### Median: {table[column].median()}")
-    st.markdown(f"#### Min: {table[column].min()}")
-    st.markdown(f"#### Max: {table[column].max()}")
+col1, col2 = st.columns(2)
+with col1:
+    st.markdown("## Histogram")
+    st.plotly_chart(fig)
+with col2:
+    st.markdown("## Statistics")
+    st.markdown(f"#### Count: {table[column].count()}")
+    if not category:
+        st.markdown(f"#### Mean: {round(table[column].mean(), 2)}")
+        st.markdown(f"#### Median: {table[column].median()}")
+        st.markdown(f"#### Min: {table[column].min()}")
+        st.markdown(f"#### Max: {table[column].max()}")
 
