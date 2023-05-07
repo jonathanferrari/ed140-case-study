@@ -1,6 +1,4 @@
 import pandas as pd, numpy as np, plotly.express as px
-from IPython.display import *
-from ipywidgets import *
 import streamlit as st
 px.defaults.template = 'seaborn'
 col_names = {
