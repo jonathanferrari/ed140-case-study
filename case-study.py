@@ -35,7 +35,7 @@ readable_names = {
     },
     "feedback" : {
         "enjoy_lab" : "I enjoy the labs",
-        "lecture_help" : "Lectures help me learn",
+        "lecture_help" : "Mini-lectures/discussions help me learn",
         "present_mode" : "I prefer this mode of presentation",
         "discussion_helpful" : "Discussions are helpful"
     },
