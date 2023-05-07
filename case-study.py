@@ -116,6 +116,4 @@ if not category:
     st.markdown(f"#### Median: {table[column].median()}")
     st.markdown(f"#### Min: {table[column].min()}")
     st.markdown(f"#### Max: {table[column].max()}")
-st.markdown("## Responses")
-st.dataframe(table)
 
