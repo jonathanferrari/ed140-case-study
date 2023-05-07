@@ -97,7 +97,7 @@ else:
     fig = px.histogram(table, x=column, color = column, 
                         title=titles[survey_type], labels=readable_names[survey_type],
                         nbins=len(table[column].unique())+1,
-                        range_x=(-.5, table[column].max() + 1),
+                        range_x=(-.5, table[column].max() + 1.5),
                         text_auto=True)
     
 fig.update_traces(textposition='outside')
