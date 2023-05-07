@@ -101,7 +101,7 @@ else:
                         text_auto=True)
     
 fig.update_traces(textposition='outside')
-
+st.title("Case Study Survey Data Analysis")
 st.markdown("## Histogram")
 st.plotly_chart(fig)
 st.markdown("## Statistics")
