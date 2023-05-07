@@ -107,7 +107,7 @@ st.plotly_chart(fig)
 st.markdown("## Statistics")
 st.markdown(f"#### Count: {table[column].count()}")
 if not category:
-    st.markdown(f"#### Mean: {table[column].mean()}")
+    st.markdown(f"#### Mean: {round(table[column].mean(), 2)}")
     st.markdown(f"#### Median: {table[column].median()}")
     st.markdown(f"#### Min: {table[column].min()}")
     st.markdown(f"#### Max: {table[column].max()}")
