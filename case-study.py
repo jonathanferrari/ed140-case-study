@@ -70,6 +70,14 @@ def load_sheet():
     data = {"experience" : experience, "feedback" : feedback, "welcome" : welcome}
     return data
 data = load_sheet()
+@st.cache_data
+def load_summaries():
+    df = data["experience"]
+    df = df[["stat_experience", "stat_confidence", "cs_experience", "cs_confidence", "bank_learn", "bank_like", "pose_learn", "pose_like", "scaffolding_helpful", "mode_preference"]]
+    exp = df.groupby(["stat_experience", "cs_experience"]).mean(numeric_only = True).reset_index().rename(columns = rename_map).iloc[:, list(range(8))]
+    means = pd.DataFrame(df.mean(numeric_only = True), columns=["Mean"]).iloc[list(range(6)), :].rename(index = rename_map)
+    return exp, means
+exp, means = load_summaries()
 
 st.title("Case Study Survey Data Analysis")
 
@@ -109,6 +117,11 @@ else:
 fig.update_traces(textposition='outside')
 st.markdown("## Histogram")
 st.plotly_chart(fig)
+st.markdown("## Summaries")
+st.markdown("### Experience Means")
+st.dataframe(means)
+st.markdown("### Experience Means by Experience")
+st.dataframe(exp)
 st.markdown("## Statistics")
 st.markdown(f"#### Count: {table[column].count()}")
 if not category:
