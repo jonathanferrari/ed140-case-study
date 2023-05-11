@@ -58,6 +58,14 @@ titles = {
     "feedback" : "Feedback Survey",
     "welcome" : "Welcome Survey"
 }
+
+rename_map = {"stat_experience" : "Stats Experience", "cs_experience" : "CS Experience", 
+                      "stat_confidence" : "Stats Confidence", "cs_confidence" : "CS Confidence",
+                        "scaffolding_helpful" : "Scaffolding Helpful", "mode_preference" : "Multimodality Preference",
+                        "bank_learn" : "Banking Education Value", "bank_like" : "Banking Education Enjoyment",
+                        "pose_learn" : "Problem Posing Education Value", "pose_like" : "Problem Posing Education Enjoyment"
+                      }
+
 @st.cache_data
 def load_sheet():
     sheets = pd.read_excel("https://docs.google.com/spreadsheets/d/e/2PACX-1vTaoSrGe7BpMFvXFQnn02_HUt7t3pTWAAl1ny_A4zNkszerHWZHReQ0YkDK58qJ8_G83ih9IVqmm0IO/pub?output=xlsx", sheet_name = None)
